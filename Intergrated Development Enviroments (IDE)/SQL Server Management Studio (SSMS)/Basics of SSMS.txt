@@ -1,0 +1,56 @@
+- What is SSMS? 
+  SQL Server Management Studio (SSMS) is an integrated environment for managing any SQL infrastructure. Use SSMS to access, 
+  configure, manage, administer, and develop all components of SQL Server, Azure SQL Database , Azure SQL Managed Instance, 
+  SQL Server on Azure VM, and Azure Synapse Analytics. SSMS provides a single comprehensive utility that combines a broad 
+  group of graphical tools with many rich script editors to provide access to SQL Server for developers and database administrators 
+  of all skill levels.
+
+- SQL Server Management Studio components
+  * Use Object Explorer to view and manage all of the objects in one or more instances of SQL Server.	 
+  * Use Template Explorer to build and manage files of boilerplate text that you use to speed the 
+    development of queries and scripts.	 
+  * Use the deprecated Solution Explorer to build projects used to manage administration items such as 
+    scripts and queries. 
+  * Use the visual design tools included in Management Studio to build queries, tables, and diagram databases.	 
+  * Use the Management Studio language editors to interactively build and debug queries and scripts with Query and Text Editors
+
+- Logging on to Database (On-Primises)
+  You must provide the correct credentials to access your database
+  * Server Name: . 
+    -- Note: Which means 'on this pc'
+  * Authentication: Windows Authentication -> This means your authenticating from your computers login
+    -- Note: There are many kinds of authentication types. Depending on the database your connected to you may have to use the 
+	       one of the other types, but they will require a User Name & Password to access. 
+    
+ ******* EB After this section you'll fill this out. Use the structure i have in all these documents. Remember be detailed ******
+
+- Create a Database
+  What are the rules and naming conventions?
+  What are the steps?
+
+- Creating a Table
+  What are the rules and naming conventions? 
+  What are the steps? 
+  What is a Primary Key (PK), How do you set it, And what is it used for.
+  What are the primary data types and give examples of what data type is used for what type of data:
+    Example:
+    -> nvarchar(50) : This is used with data that is text. The parentheses denotes the maximum number of charaters this 
+                      column can have.
+
+    -> int : ...
+
+
+- Creating Relationships
+  What are the rules to relationships?
+  How to do you create relationships. 
+  What's a Foreign Key (FK)
+  What are the steps to creating a relationship?
+ 
+- How do you execute a Query statement
+
+- How do you insert data (only using ssms not scripts, scripts are covered in your 'Basics of SQL Queries' file)
+- How do you delete and update data
+
+- How do you save your sql queries and what are the files extentions for a sql query. Example: this file is a .txt file extention.
+
+

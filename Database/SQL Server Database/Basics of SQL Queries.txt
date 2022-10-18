@@ -1,0 +1,311 @@
+What is SQL?
+- SQL is a standard language for accessing and manipulating databases.
+- SQL can execute queries against a database
+- SQL can retrieve data from a database
+- SQL can insert records in a database
+- SQL can update records in a database
+- SQL can delete records from a database
+- SQL can create new databases
+- SQL can create new tables in a database
+** SQL can create stored procedures in a database 
+** SQL can create views in a database 
+** SQL can set permissions on tables, procedures, and views 
+   -- Note: ** = (Will learn Later)
+
+What is SQL Server
+
+- SQL Server is a relational database management system, or RDBMS, developed and marketed by Microsoft.
+- SQL stands for Structured Query Language and is used to communicate with a database. SQL is the standard language for 
+  relational database management systems (RDBMS)
+
+Quering data from SQL Server
+
+- SELECT : The SELECT statement is used to select data from a database. The data returned is stored in a result 
+  table, called the result-set. This is where you request, alter, manipulate, aggregate columns within a table.
+  Examples:
+    -> SELECT FirstName, LastName
+    -> SELECT Count(LastName)
+    -> SELECT SUM(Price)
+    -> SELECT * 
+      -- Note: * is used in the all the columns in all tables associated (one or many tables). Use this to start
+               your queries until you finish the rest of the SQL Statement to ensure all data is present before 
+               you request, alter, manipulate, aggregate columns within a table.
+
+    -> SELECT DISTINCT LastName
+      -- Note: DISTINCT statement is used to return only distinct (different) values. Inside a table, a column often
+               contains many duplicate values; and somethings you only want to list the different (distinct) values.
+
+- FROM : This command is used to specify which table to select or delete data from. This statement is usually 
+         follows immediately after the SELECT statement has been made
+  Examples:
+    -> SELECT FirstName, LastName
+       FROM Persons
+
+    -> SELECT LastName, DateOfBirth 
+       FROM Persons
+
+- WHERE : This command is used to filter a result set to include only records that fulfil a specified condition.
+  Examples:
+    -> SELECT FirstName, LastName
+       FROM Persons
+	 WHERE LastName = 'Hailu' 
+      -- Note: In SQL Server single quotes are used to annotate text values data types (text, nvarchar, char, etc)
+
+    -> SELECT * 
+       FROM Persons
+       WHERE DateOfBirth > '01/20/1979'
+
+      -- Note: Various operators can be used:
+         = : Equal
+  		 Example:
+                -> SELECT *
+  			 FROM Persons
+ 			 WHERE LastName = 'Hailu'
+
+         > : Greater than
+  		 Example:
+                -> SELECT *
+  			 FROM Persons
+ 			 WHERE Age > 20
+
+         < : Less than
+  		 Example:
+                -> SELECT *
+  			 FROM Persons
+ 			 WHERE Age < 20
+
+         >= : Greater than or equal
+  		 Example:
+                -> SELECT *
+  			 FROM Persons
+ 			 WHERE Age >= 20
+
+         <= : Less than or equal
+  		 Example:
+                -> SELECT *
+  			 FROM Persons
+ 			 WHERE Age <= 20
+
+         <> or != : Not equal -- Note: In some versions of this SQL operator uses either <> or != for Not equal. If one doesn't work 
+                                       use the other. 
+  		 Example:
+                -> SELECT *
+  			FROM Persons
+ 			WHERE Age <> 20
+
+                -> SELECT *
+  			 FROM Persons
+ 			 WHERE Age != 20
+
+         BETWEEN : Between a certain range -- Note: The range is usually a data types of numbers (int, double, money, ...) 
+								    or dates (datetime,datetime2, ...) 
+  		 Example:
+                -> SELECT *
+  			 FROM Persons
+ 			 WHERE Age BETWEEN 50 AND 60;
+
+                -> SELECT *
+  			 FROM Persons
+ 			 WHERE DateOfBirth BETWEEN '01/01/2000' AND '02/01/2000';
+
+	   LIKE : Search for a pattern by using wildcards. The two often used wildcards are:
+		- % : The percent sign (%) represents zero, one, or multiple characters
+		- _ :  The underscore sign (_) represents one, single character
+		   --Note: MS Access uses an asterisk (*) instead of the percent sign (%), and a question mark (?) 
+			     instead of the underscore (_).
+
+  		 Example:
+                -> SELECT *
+  			 FROM Persons
+ 			 WHERE LastName LIKE 'Hai%' --> Finds any values that start with "Hai"
+
+      	    -> SELECT *
+  			 FROM Persons
+ 			 WHERE LastName LIKE '%ilu' --> Finds any values that end with "ilu"
+
+                -> SELECT *
+  			 FROM Persons
+ 			 WHERE LastName LIKE '%Hai%' --> Finds any values that have "or" in any position
+
+      	    -> SELECT *
+  			 FROM Persons
+ 			 WHERE LastName LIKE '_a%' --> Finds any values that have "a" in the second position
+
+                -> SELECT *
+  			 FROM Persons
+ 			 WHERE LastName LIKE 'a_%' --> Finds any values that start with "a" and are at least 2 characters in length
+
+      	    -> SELECT *
+  			 FROM Persons
+ 			 WHERE LastName LIKE 'a__%' --> Finds any values that start with "a" and are at least 3 characters in length
+
+      	    -> SELECT *
+  			 FROM Persons
+ 			 WHERE LastName LIKE 'h%u' --> Finds any values that start with "h" and ends with "u"
+
+         IN : To specify multiple possible values for a column
+  		 Examples:
+                -> SELECT *
+  			 FROM Persons
+ 			 WHERE LastName = 'Hailu'
+         
+	   NULL : It is not possible to test for NULL values with comparison operators, such as =, <, or <>. We will have to 
+			 use the IS NULL and IS NOT NULL operators instead. 
+			 * Note: NULL and a blank space are not the same. If a column has a blank space in the database it's not 
+ 				   considered empty because blank space is a value to a database. NULL denotes there is no value at all.
+             Examples:
+                -> SELECT *
+  			 FROM Persons
+ 			 WHERE LastName IS NULL --> Gives you the all the records where LastName is NULL
+
+                -> SELECT *
+  			 FROM Persons
+ 			 WHERE LastName IS NOT NULL -- Gives you all the records where LastName is not NULL meaning has a value of
+								some kind.
+
+         AND : The AND operator displays a record if all the conditions separated by AND are TRUE.
+            Examples:
+	          -> SELECT *
+  			 FROM Persons
+ 			 WHERE LastName = 'Hailu' AND FirstName = 'Amy' 
+                   * Note: When using AND you never use the same column, more than once, for the conditions. Like a persons LastName
+                           can't be both 'Hailu' and 'Lucas'.
+
+	   OR : The OR operator displays a record if any of the conditions separated by OR is TRUE.
+            Examples:
+	          -> SELECT *
+  			 FROM Persons
+ 			 WHERE LastName = 'Hailu' OR LastName = 'Lucas' 
+
+         NOT : The NOT operator displays a record if the condition(s) is NOT TRUE.
+            Examples:
+	          -> SELECT *
+  			 FROM Persons
+ 			 WHERE LastName NOT 'Hailu' 
+
+- ORDER BY : The ORDER BY keyword is used to sort the result-set in ascending or descending order. The ORDER BY keyword 
+             sorts the records in ascending (ASC) order by default. To sort the records in descending order, use the DESC keyword.
+	Examples:
+	-> SELECT *
+	   FROM Persons
+	   ORDER BY LastName DESC -- Gives you all the records in descending order
+
+	-> SELECT *
+	   FROM Persons
+	   ORDER BY LastName -- Gives you all the records in ascending order   	
+
+- What are Aliases?
+  SQL aliases are used to give a table, or a column in a table, a temporary name. Aliases are often used to make column 
+  names more readable. An alias only exists for the duration of that query. An alias is created with the AS keyword. 
+  Aliases can be used with column names within a table or for the tables itself.
+  
+  Examples:
+     -> SELECT ColumnNameIsCrazyLong AS CrazyLongCol
+  	 FROM Persons
+
+     -> SELECT *  
+  	 FROM Persons AS p
+       -- Note: When using Aliases for tables the column selected now should use the alias instead of the table name.
+            Example:
+              --> Original SQL Statement (A)
+                 -> SELECT Persons.FirstName, Persons.LastName
+                  FROM Persons
+
+              --> Same SQL Statement from (A) but with an alias
+ 		     -> SELECT p.FirstName, p.LastName
+			FROM Persons AS p
+
+- Functions in SQL Server
+  SQL server functions are sets of SQL statements that execute a specific task. Their main use is in allowing common 
+  tasks to be easily replicated. The use of SQL server functions is similar to that of functions in mathematics, in 
+  that they correlate a series on inputs to a series of outputs. Functions typically require a value or column within 
+  the round brackets or parentheses () to execute the task.
+
+  Examples:
+    > COUNT()
+      Examples:
+       -> SELECT Count(*)
+          FROM Persons
+
+       -> SELECT Count(LastName)
+          FROM Persons
+	    WHERE LastName is null
+          -- Note: Count is a function that requires a value and NULL values are not counted
+
+    > AVG()
+      Examples:
+       -> SELECT AVG(Price)
+          FROM Products
+	    -- Note: AVG() is a function that requires a value and requires a number of some kind (int, double, money, ...),
+                   you don't use this with text values data types (text, nvarchar, char, etc)
+
+    > SUM()
+      Examples:
+       -> SELECT SUM(Quantity)
+          FROM OrderDetails
+ 	    -- Note: SUM is a function that requires a value and requires a number of some kind (int, double, money, ...),
+                   you don't use this with text values data types (text, nvarchar, char, etc)
+
+- GROUP BY : The GROUP BY statement groups rows that have the same values into summary rows, 
+		 like "find the number of customers in each country". The GROUP BY statement is often 
+		 used with aggregate functions (COUNT(), MAX(), MIN(), SUM(), AVG()) to group the result-set by one or more columns.
+  Examples:
+    -> SELECT LastName
+       FROM Persons
+       GROUP BY LastName -- Gives you the the distinct LastNames in the Persons table
+
+    -> SELECT LastName, Count(*)
+       FROM Persons
+       GROUP BY LastName -- Gives you the the LastNames and the count of records with that LastName in the Persons table
+
+- Table JOINS
+  A JOIN clause is used to combine rows from two or more tables, based on a related column between them. A venn diagram is 
+  usually used to depict the relationships between joins. There are 3 kinds of JOINS in a relational Database: INNER, LEFT, RIGHT
+  
+  > INNER JOIN : The INNER JOIN keyword selects records that have matching values in both tables.
+      Examples:
+      -> SELECT FirstName, LastName, Street, Country
+	   FROM Persons 
+	   INNER JOIN Addresses
+	   ON Persons.PersonID = Persons.PersonID;
+         -- Note: When using JOINS if one or more tables have the exact same column name like IsActive then you have 
+                  to tell the computer which table the column you want to display by putting the name of the table then a dot (.)
+   			then the column name. 
+			Example: Let's assume both Persons and Addresses have a column named IsActive. 
+				When you run:
+				-> SELECT FirstName, LastName, IsActive
+	   		         FROM Persons 
+	                     INNER JOIN Addresses
+	                     ON Persons.PersonID = Persons.PersonID; --> You'll recieve an 'ambiguous defined' error. Meaning there 
+										           are more than on IsActive. The PC is not smart enough to 
+										           know what you want, you have to tell it. 
+  	            
+                        To fix this issue you rewrite the statement as:
+				-> SELECT FirstName, LastName, Person.IsActive 
+	   		         FROM Persons 
+	                     INNER JOIN Addresses
+	                     ON Persons.PersonID = Persons.PersonID; 
+                           -- Note: If you wanted the Addresses IsActive then you'd change it to Addresses.IsActive
+
+      ** Same example using Alias
+      -> SELECT FirstName, LastName, Street, Country, p.IsActive
+	   FROM Persons p
+	   INNER JOIN Addresses a
+	   ON p.PersonID = a.PersonID;
+   
+
+  > LEFT JOIN : The LEFT JOIN keyword returns all records from the left table (Persons), and the matching records from 
+	          the right table (Addresses). The result is 0 records from the right side, if there is no match.
+      Examples:
+      -> SELECT FirstName, LastName, Street, Country
+	   FROM Persons 
+	   LEFT JOIN Addresses
+	   ON Persons.PersonID = Persons.PersonID;
+
+  > RIGHT JOIN : The RIGHT JOIN keyword returns all records from the right table (Addresses), and the matching records from 
+		     the left table (Persons). The result is 0 records from the left side, if there is no match.
+      Examples:
+      -> SELECT FirstName, LastName, Street, Country
+	   FROM Persons 
+	   RIGHT JOIN Addresses
+	   ON Persons.PersonID = Persons.PersonID;

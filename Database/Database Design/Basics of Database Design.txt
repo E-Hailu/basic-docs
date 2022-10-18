@@ -1,0 +1,40 @@
+
+- Databases come in two flavors
+  * On-premises: This is a database that's a phyical server located in a building, office, or on a computer. This is the 
+                 legacy way of how databases were stored and maintained. When you have a on-premise database you have to
+		     maintain all the software patches, security, disaster recovery (DR), scalability, and many more maintence
+                 items. This can be costly to a company. Compare this to a manual transmission car, you have to control every
+ 		     gear, gas, clutch inorder to get moving.
+
+  * Cloud Database (Software as a Service - SaaS) : This is a database that's mananged and maintained in a cloud environment.
+		     There are many cloud service providors but the main 3 are Azure, Amazon Web Services (AWS), Google Platform. The 
+		     The benifits of a database being hosted in the cloud is that the cloud service provider handles the security,
+		     scalability, disaster recovery, software patches, and much much more. This adds a huge benifit to cost savings
+		     as well as ease of use.
+
+- What is a Database Schema? 
+  A database schema defines how data is organized within a relational database; this is inclusive of logical constraints such as, 
+  table names, fields, data types, and the relationships between these entities. Schemas commonly use visual representations to 
+  communicate the architecture of the database, becoming the foundation for an organization’s data management discipline. 
+  This process of database schema design is also known as data modeling.
+
+  -- Note: Before Designing a Database Schema always gather requirements and get the business rules from the client to ensure 
+           all areas are covered. These areas are called 'Use Cases'. A use case is a methodology used in system analysis to 
+	     identify, clarify and organize system requirements. The use case is made up of a set of possible sequences of 
+           interactions between systems and users in a particular environment and related to a particular goal. The method 
+	     creates a document that describes all the steps taken by a user to complete an activity.
+
+* Need to know for later. 
+- Characteristics of use case
+  Use cases describe the functional requirements of a system from the end user's perspective, creating a goal-focused sequence 
+  of events that is easy for users and developers to follow. A complete use case will include one main or basic flow and various 
+  alternate flows. The alternate flow, also known as an extending use case, describes normal variations to the basic flow as well 
+  as unusual situations.
+
+ * A use case should display the following characteristics:
+ -> Organizes functional requirements. How does the business function?
+ -> Models the goals of system/actor interactions. What is the system suppose to do and who uses it?
+ -> Records paths -- called scenarios -- from trigger events to goals. What actions happen when certain scenarios happen?
+ -> Describes one main flow of events and various alternate flows. How does things work end to end, meaning from begaining to end.
+ -> Multi-level, so that one use case can use the functionality of another one.
+
