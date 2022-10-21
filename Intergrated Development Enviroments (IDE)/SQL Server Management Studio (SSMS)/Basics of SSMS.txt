@@ -1,3 +1,4 @@
+
 - What is SSMS? 
   SQL Server Management Studio (SSMS) is an integrated environment for managing any SQL infrastructure. Use SSMS to access, 
   configure, manage, administer, and develop all components of SQL Server, Azure SQL Database , Azure SQL Managed Instance, 
@@ -26,19 +27,72 @@
 
 - Create a Database
   What are the rules and naming conventions?
+  In creating a database we have to be precise in naming the whole database.
+  Being short and precise will make it easy for us to diffrentiate one databse from the other.
+  The name can contain letters a-z,all characters like underscore(_),brackets(),parenthesis{},etc...
+  The first letter of the database(DB) should in a upper case and the rest will be in lower case.
+  After naming the Data Base we shall end it with DB, with no space in between.
+ Example :- ReservationDB
+            AkluBakeryDB
+            CrewsDB  
   What are the steps?
+  In creating a DB we follow the following steps
+
+STEP 1) Open our SQL SERVER
+STEP 2) we connect to our server which is connected with internet.
+STEP 3) we go to our explorer (which is on the left side of our screen) and right click the +(plus) button on the Databases folder.
+STEP 4) after right clicking we will get a dialogue box with options of New Database..., we click on that option.
+STEP 5) A new page will appear on the screen with the cursour on the Databse Name.
+STEP 6) After naming our database short and precisely we click on the OK button on the right bottom of our new opened up screen. 
 
 - Creating a Table
   What are the rules and naming conventions? 
+ In naming tables we have to be extra carefull ,because when we quiery to find results the tables are the main source of data.
+ We can use alphabets A-Z,characters like (_),() and etc...
+ We can use both singular and plurar conventions. I prefer to use plurar names and nounes in naming my tables.
+ Example- Ratings, Expenses,Restaurants ,Products etc...
+ If there is a need to use more than 1 word to describe what is in the table, DO IT. 
+ Example  In the 'RestaurantCuisines' table we cant only use 'Restauant' because we already have a table named Restaurant in our 
+ DB, the same goes for cuisines. Naming it either of the two wouldnt clearly describe what is in the table.'RestasurantCuisines' 
+ is the right and correct way for naming this table.
+ 
   What are the steps? 
+
+ In creating TABLES we use the following steps
+
+STEP 1) We first go to our explorer and click on our databse which was created as xxxxxDB and click on the plus(+) sign.
+STEP 2) After we clicked the plus sign there will be a drop down of Database Diagrams,Tables,views,External Resources etc..,we go 
+to the tables folder and Right Click on the plus (+) sign.
+STEP 3) After the right click we will get an options of New, Filter etc..., we go to New --then click on New Table... 
+STEP 4) After we wait for the loading to stop we get a new screen next to our explorer with Coloumn Name, Data Type AND Allow Nulls.
+STEP 5) NOW we fill our datas as we want with the apporpraite naming conventions and data types.
+  
   What is a Primary Key (PK), How do you set it, And what is it used for.
+
+  Primary Keys uniquely identfies each record in a table. Primary Keys must contain unique values and cannot contain Null VALUES.
+  A table can have only 1 primary key.
+  A DB must have a primary key for options to INSERT,UPDATE,DELETE,JOIN etc..
+ SEETING UP PRIMARY KEY 
+
+ Setting up primary key is preety much easy what we have to do is we go to our coloumns in our already created table 
+ and choose the data we want to set as primary key and go to the right side of the field and RIGHT CLICK on it. we will then get option of 
+ SET PRIMARY KEY, we click on it and where done.
+ After seeting up our primary key we will find a key sign before the field selected as Primary key.
+ 
   What are the primary data types and give examples of what data type is used for what type of data:
     Example:
     -> nvarchar(50) : This is used with data that is text. The parentheses denotes the maximum number of charaters this 
                       column can have.
 
-    -> int : ...
+    -> int :  This is used with data that is numbers. examples are XxxxID, Age, Weight etc...
+     
+     Money : This is used with data that is price. Price of any product Example cars,bread,beer anything that has price uses this data type.
+     
+    Text : This is used with letters. Anything Thats letters from a-z. Example Name, Last Name etc...
 
+    bit  :  This is used with a YES OR NO answers. bit is only true or false. Examples are Is Active, Stock Availability.
+ If you allow nulls, then that's three values. true (1), false (0), null. What does null indicate with a column being called InActive. 
+ They either are or not. Just like a order. Is it IsComplete? thats a yes or no. You can't have a null order
 
 - Creating Relationships
   What are the rules to relationships?

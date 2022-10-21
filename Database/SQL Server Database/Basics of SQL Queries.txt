@@ -220,6 +220,7 @@ Quering data from SQL Server
   tasks to be easily replicated. The use of SQL server functions is similar to that of functions in mathematics, in 
   that they correlate a series on inputs to a series of outputs. Functions typically require a value or column within 
   the round brackets or parentheses () to execute the task.
+  -- Notes:  In SSMS functions are highlighted 'pink' 
 
   Examples:
     > COUNT()
