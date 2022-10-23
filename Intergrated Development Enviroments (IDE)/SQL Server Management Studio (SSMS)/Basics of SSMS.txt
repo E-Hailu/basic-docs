@@ -38,15 +38,18 @@
   What are the steps?
   In creating a DB we follow the following steps
 
-STEP 1) Open our SQL SERVER
-STEP 2) we connect to our server which is connected with internet.
-STEP 3) we go to our explorer (which is on the left side of our screen) and right click the +(plus) button on the Databases folder.
-STEP 4) after right clicking we will get a dialogue box with options of New Database..., we click on that option.
+STEP 1) Open our SQL SERVER MANAGEMENT STUDIO (SSMS)
+STEP 2) we connect to our server which is on premise.
+STEP 3) we go to our Object Explorer (which is on the left side of our screen) and right click the (+) button on the 
+	Databases folder to show existing databases if any.
+STEP 4) after right clicking the database folder we will get a dialogue box with options of New Database..., we click on that option.
 STEP 5) A new page will appear on the screen with the cursour on the Databse Name.
-STEP 6) After naming our database short and precisely we click on the OK button on the right bottom of our new opened up screen. 
+STEP 6) After the database is given a name in the "Owner" textbox underneith you make the owner sa. This ensures full access to the database. 
+        "sa" stands for Server Administrator.
+STEP 7) After naming our database short and precisely we click on the OK button on the right bottom of our new opened up screen. 
 
 - Creating a Table
-  What are the rules and naming conventions? 
+ What are the rules and naming conventions? 
  In naming tables we have to be extra carefull ,because when we quiery to find results the tables are the main source of data.
  We can use alphabets A-Z,characters like (_),() and etc...
  We can use both singular and plurar conventions. I prefer to use plurar names and nounes in naming my tables.
@@ -56,7 +59,7 @@ STEP 6) After naming our database short and precisely we click on the OK button 
  DB, the same goes for cuisines. Naming it either of the two wouldnt clearly describe what is in the table.'RestasurantCuisines' 
  is the right and correct way for naming this table.
  
-  What are the steps? 
+ What are the steps? 
 
  In creating TABLES we use the following steps
 
@@ -86,13 +89,13 @@ STEP 5) NOW we fill our datas as we want with the apporpraite naming conventions
 
     -> int :  This is used with data that is numbers. examples are XxxxID, Age, Weight etc...
      
-     Money : This is used with data that is price. Price of any product Example cars,bread,beer anything that has price uses this data type.
+    -> money : This is used with data that is price. Price of any product Example cars,bread,beer anything that has price uses this data type.
      
-    Text : This is used with letters. Anything Thats letters from a-z. Example Name, Last Name etc...
+    -> text : This is used with letters. Anything Thats letters from a-z. Example Name, Last Name etc...
 
-    bit  :  This is used with a YES OR NO answers. bit is only true or false. Examples are Is Active, Stock Availability.
- If you allow nulls, then that's three values. true (1), false (0), null. What does null indicate with a column being called InActive. 
- They either are or not. Just like a order. Is it IsComplete? thats a yes or no. You can't have a null order
+    -> bit :  This is used with a YES OR NO answers. bit is only true or false. Examples are Is Active, Stock Availability.
+ 	      If you allow nulls, then that's three values. true (1), false (0), null. What does null indicate with a column being called InActive. 
+              They either are or not. Just like a order. Is it IsComplete? thats a yes or no. You can't have a null order
 
 - Creating Relationships
   What are the rules to relationships?
