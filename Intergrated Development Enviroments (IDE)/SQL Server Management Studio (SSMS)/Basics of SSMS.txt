@@ -96,15 +96,67 @@ STEP 5) NOW we fill our datas as we want with the apporpraite naming conventions
 
 - Creating Relationships
   What are the rules to relationships?
-  How to do you create relationships. 
-  What's a Foreign Key (FK)
-  What are the steps to creating a relationship?
+The relationship between tables is simple, what we have to do is first relate the tables using deep though and thinking. 
+ Example Hotels table have a relationship with reservations, reservations with restaurantID.
+
+   DB relationships means how the data in one table is related to the data in another table. 
+  In RDBMS the term 'Relational' refers to the tables with relations. Relationships between two tables are created using keys.
+ There are 3 types of relationships in database
+ 1) ONE TO ONE RELATIONSHIP
+ 2) ONE TO MANY OR MANY TO ONE RELATIONSHIP
+ 3) MANY TO MANY RELATIONSHP
+   
+  How to do you create relationships.
+
+ In creating relationship among tables we firat fill the coloumns with datas. 
+ In both tables we will have to have a data  that exist in both tables so that one table relates with the other. 
+ REMINDER BOTH OF THE DATAS IN THE TWO DIFFRENT TABLES MUST HAVE AN ID SO THAT THE FIRST WILL BE PRIMARY KEY AND THE SECOND BE FORIEGN KEY. 
  
+  What's a Foreign Key (FK)
+
+  A foreign key is a coloumn in a relational database table that provides a link between two diffrent tables. 
+  A foriegn key serves to refrence the primary key of another existing table. 
+  The coloumn acting as a foriegn key must have a corresponding value linked table.
+
+  What are the steps to creating a relationship?
+
+In creating a relationship we follow the follwing steps.
+STEP 1) After setting a primary key using the above stated steps(HOW TO CREATE A PRIMARY KEY) we go to our second table,
+ where we want to create relatinship. REMINDER (IN THE SECOND TABLE WHERE WE WANT A RELATIONSHIP TO EXIST
+ WE MUST HAVE A COLOUMN IN THE FIRST TABLE WITH THE SAME COLOUMN ID)
+ STEP 2) After we made sure there is same coloumn ID IN BOTH TABLES we the go the second table  right field of the coloumn ID and RIGHT CLICK on it, 
+ we then get an options like set primary key, insert coloumn,delete coloumn, and relationships with an image of 2 screens in a one line link.
+ STEP 3) we the Click on the relationships options and a new screen will appear in front of us .
+ STEP 4) On the new appeared screen there will be options of ADD AND DELETE on the left bottom of the screen.
+ STEP 5) We click on the ADD button and there will options on the right side of the screen stating General in BOLD letters. 
+ after we see the general in bold letters we will go down to tables and specfications and click on it .
+ STEP 6) After we click on the table and specfications options we will get 3 dots (...) on the same line of tables and specfications.
+ STEP 7) Onwards clicking the 3 dots (...) we will get another dialogue box with relationship name, primary key table and foriegn key table.
+ STEP 8) Now we must be carefull and see the link what we want to establish.
+ we first go the primary key option and make sure the primary table and key are correct. 
+ STEP 9) After that we go to the foriehn key table and see whether the second table we want to
+ relate is correct and if so we go to the dialogue box underneath it and change it to the coloumnID we want to be related with.
+
 - How do you execute a Query statement
 
+After we  type our query on the right side of our explorer, we go to the toolbar of our mysql and click Execute which is located next 
+to our DB name above our explorer on the right side of oue screen.
+
 - How do you insert data (only using ssms not scripts, scripts are covered in your 'Basics of SQL Queries' file)
+
+ We first go to our DB where we want to update and then click on the plus sign to get our tables , 
+ then after we get our tables we right click on it ,there will be an option of EDIT TOP 200 ROWS. after clicking on EDIT TOP 200 ROWS 
+AUTOMATICALLY a screen will appear on the right side of our mysql screen with the datas that have been inserted.
 - How do you delete and update data
+
+we follow the same steps as before in the insert data but instead of going to EDIT TOP 200 ROWS we go to Script table as, 
+the options of create, update, insert will appear. then we will choose what we want and set the condtions already set by mysql.
 
 - How do you save your sql queries and what are the files extentions for a sql query. Example: this file is a .txt file extention.
 
+ After completion of our queries we would want to save our progress so what we do is hold the control(Ctrl) and S buttons in short OR
+ we can go to the toolbar in our mysql and look for a floopy disk sign and just click on it, 
+then an options will be come just as we are saving any ordinary word file we will choose where we want to be safed and click ok. 
+my advice is to save to my docs-github (if availabe) 
+ The file extentions after we saved will be .sql
 
