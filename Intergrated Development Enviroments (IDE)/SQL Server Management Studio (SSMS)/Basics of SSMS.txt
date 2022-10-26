@@ -49,7 +49,9 @@ STEP 6) After the database is given a name in the "Owner" textbox underneith you
 STEP 7) After naming our database short and precisely we click on the OK button on the right bottom of our new opened up screen. 
 
 - Creating a Table
+
  What are the rules and naming conventions? 
+
  In naming tables we have to be extra carefull ,because when we quiery to find results the tables are the main source of data.
  We can use alphabets A-Z,characters like (_),() and etc...
  We can use both singular and plurar conventions. I prefer to use plurar names and nounes in naming my tables.
@@ -75,6 +77,7 @@ STEP 5) NOW we fill our datas as we want with the apporpraite naming conventions
   Primary Keys uniquely identfies each record in a table. Primary Keys must contain unique values and cannot contain Null VALUES.
   A table can have only 1 primary key.
   A DB must have a primary key for options to INSERT,UPDATE,DELETE,JOIN etc..
+
  SEETING UP PRIMARY KEY 
 
  Setting up primary key is preety much easy what we have to do is we go to our coloumns in our already created table 
@@ -98,8 +101,10 @@ STEP 5) NOW we fill our datas as we want with the apporpraite naming conventions
               They either are or not. Just like a order. Is it IsComplete? thats a yes or no. You can't have a null order
 
 - Creating Relationships
+
   What are the rules to relationships?
-The relationship between tables is simple, what we have to do is first relate the tables using deep though and thinking. 
+
+The relationship between tables is simple, what we have to do is first relate the tables using deep thourough and thinking. 
  Example Hotels table have a relationship with reservations, reservations with restaurantID.
 
    DB relationships means how the data in one table is related to the data in another table. 
@@ -124,9 +129,10 @@ The relationship between tables is simple, what we have to do is first relate th
   What are the steps to creating a relationship?
 
 In creating a relationship we follow the follwing steps.
-STEP 1) After setting a primary key using the above stated steps(HOW TO CREATE A PRIMARY KEY) we go to our second table,
- where we want to create relatinship. REMINDER (IN THE SECOND TABLE WHERE WE WANT A RELATIONSHIP TO EXIST
- WE MUST HAVE A COLOUMN IN THE FIRST TABLE WITH THE SAME COLOUMN ID)
+
+ STEP 1) After setting a primary key using the above stated steps(HOW TO CREATE A PRIMARY KEY) we go to our second table,
+        where we want to create relatinship. REMINDER (IN THE SECOND TABLE WHERE WE WANT A RELATIONSHIP TO EXIST
+   WE MUST HAVE A COLOUMN IN THE FIRST TABLE WITH THE SAME COLOUMN ID)
  STEP 2) After we made sure there is same coloumn ID IN BOTH TABLES we the go the second table  right field of the coloumn ID and RIGHT CLICK on it, 
  we then get an options like set primary key, insert coloumn,delete coloumn, and relationships with an image of 2 screens in a one line link.
  STEP 3) we the Click on the relationships options and a new screen will appear in front of us .
